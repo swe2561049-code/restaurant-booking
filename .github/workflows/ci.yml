@@ -1,0 +1,21 @@
+name: Restaurant Booking CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Кодыг татах
+        uses: actions/checkout@v4
+
+      - name: Node.js суулгах
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Сангуудыг суулгах
+        run: npm ci
+
+      - name: Тест ажиллуулах
+        run: npm test
