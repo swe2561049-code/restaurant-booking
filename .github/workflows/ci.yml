@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Кодыг татах
         uses: actions/checkout@v4
@@ -13,9 +13,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - name: Сангуудыг суулгах
-        run: npm ci
 
       - name: Тест ажиллуулах
         run: npm test
